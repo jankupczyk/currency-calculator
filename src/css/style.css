@@ -1,0 +1,20 @@
+@media screen and (min-width: 640px){
+
+}
+
+*{
+    scroll-behavior: smooth;
+}
+
+body{
+    min-width: 480px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+#main-container{
+    display: flex;
+    flex-flow: column wrap;
+}
