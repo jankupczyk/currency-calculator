@@ -1,20 +1,69 @@
-@media screen and (min-width: 640px){
+@import url("https://fonts.google.com/specimen/Poppins");
 
+@media screen and (min-width: 480px){    
 }
 
 *{
     scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
 body{
+    margin: 0 auto;
     min-width: 480px;
+    min-height: 100vh;
     display: flex;
     flex-flow: column wrap;
+    align-items: center;
     justify-content: center;
     text-align: center;
+    font-family: "Poppins", sans-serif;
+    color: #111;
+    background-color: #afafaf;
 }
 
-#main-container{
+#currency-select{
+    width: 55vw;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+
+.inputs{
+    margin: 2rem 2rem;
+}
+
+select{
+    width: 200px;
+    height: 35px;
+}
+
+input, .input{
+    background-color: aliceblue;
+    border-radius: 10px;
+    border: none;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+input::placeholder{
+    color: #111;
+}
+
+.amount{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+
+.details{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    margin: 1rem 2rem;
+}
+
+.info{
+    margin: 2rem 2rem;
 }

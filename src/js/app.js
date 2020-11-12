@@ -1,29 +1,44 @@
 // DOM
-let fromInput = document.querySelector("#from");
-let toInput = document.querySelector("#to");
+const fromInput = document.querySelector("#from");
+const toInput = document.querySelector("#to");
+const base = document.querySelector("#currBase");
+const validDate = document.querySelector("#validDate");
+const rate = document.querySelector("#rates");
 
-function getData(url, currency = "EUR"){
-    fetch(url + currency.toUpperCase())
+const URL = "https://api.exchangeratesapi.io/latest?base=";
+
+function getData(currency = "EUR", selectedCurrency){
+    fetch(URL + currency.toUpperCase())
     .then(response => response.json())
     .then(data => {
-        populate(data.rates)
-        console.log("Rejtsy: ", data.rates.CAD);
-        console.log("Bejz: ", data.base);
-        console.log("Data: ", data.date);
+        populateInputs(data.rates, selectedCurrency);
+        base.innerHTML = `<strong>Base: </strong>${data.base}`;
+        validDate.innerHTML = `<strong>Date: </strong>${data.date}`;
     })
     .catch(err => console.log(`Error occured: ${err.message}`));
 }
 
-getData("https://api.exchangeratesapi.io/latest?base=");
-
-
-function populate(data){
+function populateInputs(data, selectedCurrency){
     let option = "";
 
-    for(let curr in data){
-        option += `<option value=\"${curr}\">${curr}</option>`;
+    for(let currency in data){
+        if(currency == selectedCurrency){
+            option += `<option value=${currency} selected>${currency}</option>`;
+        }else{
+            option += `<option value=${currency}>${currency}</option>`;
+        }
     }
 
     fromInput.innerHTML = option;
     toInput.innerHTML = option;
 }
+
+function updateInfo(elem){
+    getData(elem.value, elem.options[elem.selectedIndex].text);
+}
+
+function updateRates(elem){
+
+}
+//         rate.innerHTML = `<strong> 1 ${data.base} = ${data.rates[data.base]}`;
+
