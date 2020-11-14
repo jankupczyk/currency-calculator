@@ -1,6 +1,12 @@
 @import url("https://fonts.google.com/specimen/Poppins");
 
-@media screen and (min-width: 480px){    
+@media screen and (max-width: 480px){
+    #currency-select, #amount, #details{
+        display: flex;
+        flex-flow: column wrap !important;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 *{
@@ -10,37 +16,80 @@
 
 body{
     margin: 0 auto;
-    min-width: 480px;
     min-height: 100vh;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
     text-align: center;
     font-family: "Poppins", sans-serif;
     color: #111;
-    background-color: #afafaf;
+    background-color: gainsboro;
+}
+
+h1{
+    margin-bottom: 4rem;
+}
+
+#calculator{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
 }
 
 #currency-select{
-    width: 55vw;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#from, #to{
+    margin-bottom: 1.5rem;
+}
+
+#amount{
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
 }
 
-.inputs{
-    margin: 2rem 2rem;
+#details{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin: 1rem 2rem;
+}
+
+img{
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+}
+
+img:hover{
+    cursor: pointer;
 }
 
 select{
-    width: 200px;
-    height: 35px;
+    width: 14.5rem;
+    height: 3rem;
+
+    border: 2px solid transparent;
 }
 
-input, .input{
-    background-color: aliceblue;
-    border-radius: 10px;
+select:hover{
+    border-bottom: 2px solid black;
+}
+
+select, input{
+    outline: none;
+}
+
+
+#amount input{
+    background-color: whitesmoke;
+    border-radius: 5px;
     border: none;
     font-family: inherit;
     font-size: 1rem;
@@ -51,19 +100,6 @@ input::placeholder{
     color: #111;
 }
 
-.amount{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-evenly;
-}
-
-.details{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-evenly;
-    margin: 1rem 2rem;
-}
-
 .info{
-    margin: 2rem 2rem;
+    margin: 2rem;
 }

@@ -14,34 +14,26 @@
         <title>Currency Calculator</title>
     </head>
     <body onload="getData()">
-        <header>
-            <h1>Currency Calculator</h1>
-        </header>
+        <h1>Currency Calculator</h1>
 
-        <main>
+        <main id="calculator">
             <div id="currency-select">
-
-                <div class="inputs">
-                    <select name="" id="from" onchange="updateInfo(this)"></select>
-                </div>
-
-                <div class="inputs">
-                    <select name="" id="to" onchange="updateRates(this)"></select>
-                </div>
+                <select name="" id="from" onchange="updateInfo(this)"></select>
+                <div></div>
+                <select name="" id="to" onchange="updateRates(this)"></select>
             </div>
 
-            <div class="amount">
-                <input type="text" id="amount" placeholder="Amount...">
-                <img src="" alt="Swap">
-                <input type="text" id="amount" placeholder="Amount...">
+            <div id="amount">
+                <input type="text" id="amount-1" placeholder="Amount...">
+                <img src="img/swap.png" alt="Swap button" onclick="swap()">
+                <input type="text" id="amount-2" placeholder="Amount...">
             </div>
 
-            <div class="details">
+            <div id="details">
                 <div id="currBase" class="info"></div>
                 <div id="validDate" class="info"></div>
             </div>
         </main>
-
 
         <script src="src/js/app.js"></script>
     </body>
