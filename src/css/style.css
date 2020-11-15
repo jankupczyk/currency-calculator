@@ -1,11 +1,16 @@
 @import url("https://fonts.google.com/specimen/Poppins");
 
 @media screen and (max-width: 480px){
-    #currency-select, #amount, #details{
+    #currency-select, #amount-container, #details{
         display: flex;
         flex-flow: column wrap !important;
         justify-content: center;
         align-items: center;
+        text-align: center;
+    }
+
+    .amount{
+        margin: 1rem 0 !important;
     }
 }
 
@@ -41,24 +46,16 @@ h1{
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    align-items: center;
 }
 
-#from, #to{
-    margin-bottom: 1.5rem;
-}
-
-#amount{
+#amount-container{
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
 }
 
-#details{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    margin: 1rem 2rem;
+.amount{
+    margin-left: 4rem;
 }
 
 img{
@@ -74,7 +71,6 @@ img:hover{
 select{
     width: 14.5rem;
     height: 3rem;
-
     border: 2px solid transparent;
 }
 
@@ -86,8 +82,7 @@ select, input{
     outline: none;
 }
 
-
-#amount input{
+input{
     background-color: whitesmoke;
     border-radius: 5px;
     border: none;
@@ -98,6 +93,13 @@ select, input{
 
 input::placeholder{
     color: #111;
+}
+
+#details{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin: 1rem 2rem;
 }
 
 .info{

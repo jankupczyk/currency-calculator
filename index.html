@@ -19,14 +19,16 @@
         <main id="calculator">
             <div id="currency-select">
                 <select name="" id="from" onchange="updateInfo(this)"></select>
-                <div></div>
-                <select name="" id="to" onchange="updateRates(this)"></select>
+                <input type="text" id="amount-1" class="amount" placeholder="Amount...">
             </div>
 
-            <div id="amount">
-                <input type="text" id="amount-1" placeholder="Amount...">
+            <div>
                 <img src="img/swap.png" alt="Swap button" onclick="swap()">
-                <input type="text" id="amount-2" placeholder="Amount...">
+            </div>
+
+            <div id="amount-container">
+                <select name="" id="to" onchange="updateRates(this)"></select>
+                <input type="text" id="amount-2" class="amount" placeholder="Amount...">
             </div>
 
             <div id="details">
