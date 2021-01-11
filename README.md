@@ -4,7 +4,7 @@
 
 ## How to use?
 
-Just <a href="https://jkbkupczyk.github.io/github-cards" target="_blank" rel="noopener noreferrer">visit</a> and start calculating!
+Just <a href="https://jkbkupczyk.github.io/currency-calculator/" target="_blank" rel="noopener noreferrer">visit</a> and start calculating!
 
 <img align="center" src="https://github.com/jkbkupczyk/currency-calculator/" width="" height="" />
 
