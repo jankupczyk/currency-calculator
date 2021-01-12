@@ -10,6 +10,10 @@ Just <a href="https://jkbkupczyk.github.io/currency-calculator/" target="_blank"
   <img align="center" src="https://github.com/jkbkupczyk/currency-calculator/blob/main/readme.gif" />
 </a>
 
+<a align="center" href="https://jkbkupczyk.github.io/currency-calculator">
+  <img align="center" src="https://github.com/jkbkupczyk/currency-calculator/blob/main/readme-g.gif" />
+</a>
+
 ### How to get?
 ```git
   $ git clone https://github.com/jkbkupczyk/currency-calculator
