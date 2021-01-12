@@ -6,7 +6,7 @@
 
 Just <a href="https://jkbkupczyk.github.io/currency-calculator/" target="_blank" rel="noopener noreferrer">visit</a> and start calculating!
 
-<img align="center" src="https://github.com/jkbkupczyk/currency-calculator/blob/main/readme.gif" />
+<img align="center" src="https://github.com/jkbkupczyk/currency-calculator/blob/main/readme.gif"></img>
 
 ### How to get?
 ```git
