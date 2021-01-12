@@ -1,6 +1,6 @@
 # currency-calculator
 
-### Currency calculator made with pure JS and CSS. Consumes exchange rates api.
+### Currency calculator made with pure JS and CSS. <img href="https://api.exchangeratesapi.io/latest">Consumes exchange rates api.</img>
 
 ## How to use?
 
