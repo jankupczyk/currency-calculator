@@ -1,7 +1,8 @@
 # currency-calculator
 
 <h2>
-  Currency calculator made with pure JS and CSS. <img href="https://api.exchangeratesapi.io/latest">Consumes exchange rates api.</img>
+  Currency calculator made with pure JS and CSS.
+  <img href="https://api.exchangeratesapi.io/latest">Consumes exchange rates api.</img>
 </h2>
 
 ## How to use?
