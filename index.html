@@ -8,26 +8,26 @@
     <meta name="authors" content="Jakub Kupczyk">
     <meta name="robots" content="index, follow">
     <meta name="keywords" content="currency calculator, currency, calculator">
-    <link rel="shortcut icon" href="" type="image/png">
-
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💱</text></svg>">
 
     <link rel="stylesheet" href="src/css/style.css">
     <title>Currency Calculator</title>
 </head>
 
-<body onload="getData()">
+<body>
     <main id="calculator">
         <h1>Currency Calculator</h1>
 
         <div id="currency-select">
-            <select name="" id="from" onchange="updateInfo(this)"></select>
+            <select name="" id="from"></select>
             <input type="text" id="amount-1" class="amount" placeholder="Amount...">
         </div>
 
-        <img src="img/swap.png" width="50px" height="50px" alt="Swap button" onclick="swap()">
+        <img src="img/swap.png" width="50px" height="50px" alt="Swap button" id="swap">
 
         <div id="amount-container">
-            <select name="" id="to" onchange="updateRates()"></select>
+            <select name="" id="to"></select>
             <input type="text" id="amount-2" class="amount" placeholder="Amount...">
         </div>
 

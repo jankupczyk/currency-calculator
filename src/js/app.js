@@ -1,50 +1,57 @@
-// DOM
-const fromSelect = document.querySelector("#from");
-const toSelect = document.querySelector("#to");
+const fromCurrency = document.querySelector("#from");
+const toCurrency = document.querySelector("#to");
 const base = document.querySelector("#currBase");
 const validDate = document.querySelector("#validDate");
 const rate = document.querySelector("#rate");
+const swapBttn = document.querySelector("#swap");
+const amount1 = document.querySelector("#amount-1");
+const amount2 = document.querySelector("#amount-2");
 
-const URL = "https://api.exchangeratesapi.io/latest?base=";
+let currencies;
 
-function getData(currency = "EUR", selectedCurrency) {
-    fetch(URL + currency.toUpperCase())
+const CURRENCY_API_URL = "https://api.exchangeratesapi.io/latest?base=";
+
+window.addEventListener("DOMContentLoaded", () => {
+    const defaultCurrency = "EUR";
+
+    fetch(CURRENCY_API_URL + defaultCurrency.toUpperCase())
         .then(response => response.json())
-        .then(data => {
-            populateInputs(data.rates, selectedCurrency);
-            base.innerHTML = `<strong>Base: </strong>${data.base}`;
-            validDate.innerHTML = `<strong>Date: </strong>${data.date}`;
-            rate.innerHTML = `<strong> 1 ${fromSelect.value} </strong> = <span> ${data.rates[toSelect.value]}</span>`;
+        .then(currencyList => {
+            populateInputs(currencyList.rates);
+            displayMoreInfo(currencyList);
+            currencies = currencyList;
         })
-        .catch(err => console.log(`Error occured: ${err.message}`));
+        .catch(err => console.error(err));
+}, false);
+
+const displayMoreInfo = (currencyList) => {
+    base.innerHTML = `<strong>Base: </strong>${currencyList.base}`;
+    validDate.innerHTML = `<strong>Date: </strong>${currencyList.date}`;
+    rate.innerHTML = `<strong> 1 ${fromCurrency.value} </strong> = <span> ${currencyList.rates[toCurrency.value]} ${toCurrency.value}</span>`;
 }
 
-function populateInputs(data, selectedCurrency) {
-    let fromOption = "";
+const populateInputs = (data) => {
+    let fromOption = `<option value=EUR>EUR</option>`;
     let toOption = "";
 
     for (let currency in data) {
-        if (currency == selectedCurrency) {
-            fromOption += `<option value=${currency} selected>${currency}</option>`;
-        } else {
-            fromOption += `<option value=${currency}>${currency}</option>`;
-        }
         toOption += `<option value=${currency}>${currency}</option>`;
     }
 
-    fromSelect.innerHTML = fromOption;
-    toSelect.innerHTML = toOption;
+    fromCurrency.insertAdjacentHTML("beforeend", fromOption);
+    toCurrency.insertAdjacentHTML("beforeend", toOption);
 }
 
-function updateInfo(elem) {
-    getData(elem.value, elem.value);
-    updateRates(elem.value);
-}
+toCurrency.addEventListener("change", () => {
+    const exchangeRate = `<strong> 1 ${fromCurrency.value} </strong> = <span> ${currencies.rates[toCurrency.value]} ${toCurrency.value}</span>`;
 
-function updateRates(val) {
-    rate.innerHTML = `<strong> 1 ${fromSelect.value} </strong> = <span> ${val} </span>`;
-}
+    rate.innerHTML = exchangeRate;
+});
 
-function swap() {
+amount1.addEventListener("change", () => {
+    amount2.value = (amount1.value * currencies.rates[toCurrency.value]).toFixed(4);
+})
 
-}
+amount2.addEventListener("change", () => {
+    amount1.value = (amount2.value / currencies.rates[toCurrency.value]).toFixed(4);
+}) 
